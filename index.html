@@ -1,16 +1,59 @@
+<!DOCTYPE html>
 <html>
-    <head>
-    <script src="script.js"></script>
-    <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <h1>Simple Interest Calculator</h1>
-
-        Amount <input type="number"  id="principal">  <br/>
-        Rate <input type="number"  id="rate">  <br/>
-        No. of Years <input type="number"  id="years">  <br/>
-        Interest : <span id="result"></span><br>
-
-        <button onclick="compute()">Compute</button>
-    </body>
+  <head>
+  <script src="script.js"></script>
+  <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+   <div class="maindiv">
+  <h1>Simple Interest Calculator</h1>
+  <form>
+  <fieldset name="input data">
+  <legend>Input Data</legend>
+  <br/>
+  <title>Web App for Interest Calculation</title>
+  
+      <script type = "text/javascript">
+   		function AmtChecker(){
+      	var principal = document.GetElementById("amount");
+        if (principal.value == "") {
+         alert("Please enter deposit amount!");
+         principal.focus();
+         return false;
+        }  
+        }
+   </script>
+ 
+ <form id="form1" onsubmit="return AmtChecker()">
+ </form>
+  Amount <input type="number" id="amount"> <br/><br/>
+  
+  Rate <input type="range" id="rate" min="1" max="20" value="10.25" step="0.25">
+   <span id="range">
+  </span> <br/><br/>
+  
+  No. of Years
+    <select id="years">
+     <option value="1">1</option> 
+     <option value="2">2</option>
+     <option value="3">3</option>
+     <option value="4">4</option>
+     <option value="5">5</option>
+     <option value="6">6</option>
+     <option value="7">7</option>
+     <option value="8">8</option>
+     <option value="9">9</option>
+     <option value="10">10</option>
+   </select> <br/><br/>
+   
+  <button onclick="compute()">Compute Interest</button><br><br>
+  <span id="result">    
+  </span><br/><br/><br/><br/>
+  </fieldset>
+  </form>
+  </div> 
+  <footer>
+    &#169; This Calculator belongs to lopertz
+  </footer>
+  </body>
 </html>
